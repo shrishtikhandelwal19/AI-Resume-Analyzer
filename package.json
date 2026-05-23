@@ -1,0 +1,13 @@
+{
+  "name": "ai-resume-analyzer-streamlit",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node start_streamlit.cjs",
+    "build": "echo 'No build required for Streamlit'",
+    "preview": "node start_streamlit.cjs",
+    "clean": "echo 'Skipping clean'",
+    "lint": "echo 'Skipping lint'"
+  },
+  "dependencies": {}
+}

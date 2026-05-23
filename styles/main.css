@@ -1,0 +1,366 @@
+/* Custom CSS for AI Resume Analyzer Streamlit Dashboard */
+
+/* Import Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Global Styles overriding Streamlit defaults */
+.stApp {
+    background: radial-gradient(circle at 50% 50%, #0c0822, #040209);
+    color: #f1f1f7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Light theme overrides */
+.light-mode-active {
+    background: radial-gradient(circle at 50% 50%, #f4f5fa, #e9ecf5) !important;
+    color: #1e1e2f !important;
+}
+
+/* Glassmorphic Card base style */
+.glass-card {
+    background: rgba(18, 14, 38, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(79, 172, 254, 0.15);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+/* Light responsive glass card */
+.light-mode-active .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px 0 rgba(31, 38, 135, 0.05);
+    color: #1e1e2f;
+}
+
+.light-mode-active .glass-card:hover {
+    box-shadow: 0 12px 30px 0 rgba(31, 38, 135, 0.1);
+    border: 1px solid rgba(79, 172, 254, 0.4);
+}
+
+/* Gradient text */
+.gradient-text-blue-purple {
+    background: linear-gradient(135deg, #00f2fe 0%, #b927fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Gradient banner button styling */
+.grad-button {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #b927fc 100%);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.grad-button:hover {
+    background: linear-gradient(135deg, #00f2fe 10%, #b927fc 100%);
+    box-shadow: 0 6px 20px rgba(185, 39, 252, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Beautiful custom circular charts container */
+.circle-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.circle-chart-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circle-chart-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 10;
+}
+
+.light-mode-active .circle-chart-bg {
+    stroke: rgba(0, 0, 0, 0.05);
+}
+
+.circle-chart-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease;
+}
+
+.circle-chart-text {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f1f1f7;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.light-mode-active .circle-chart-text {
+    color: #1e1e2f;
+}
+
+/* Custom stats grid rules */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Skill Badge details */
+.skill-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-badge-match {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.skill-badge-missing {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.skill-badge-neutral {
+    background: rgba(255, 255, 255, 0.05);
+    color: #a1a1aa;
+}
+
+.light-mode-active .skill-badge-neutral {
+    background: rgba(0, 0, 0, 0.04);
+    color: #4b5563;
+}
+
+/* Sidebar Custom Styling overlay */
+.sidebar .sidebar-content {
+    background-color: #0b071e !important;
+}
+
+/* Style customized progress bar */
+.custom-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 8px 0 16px 0;
+}
+
+.light-mode-active .custom-progress-bar {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.custom-progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #00f2fe, #b927fc);
+}
+
+/* Header styled items */
+.resume-analyzer-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.light-mode-active .resume-analyzer-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Upload button text */
+[data-testid="stFileUploader"] button {
+    color: black !important;
+}
+
+/* Text area background */
+textarea {
+    background-color: #ffffff !important;
+    color: black !important;
+    border: 1px solid #b927fc !important;
+}
+
+/* Placeholder text */
+textarea::placeholder {
+    color: #666666 !important;
+}
+/* Job title input box */
+input {
+    background-color: #ffffff !important;
+    color: black !important;
+    border: 1px solid #b927fc !important;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #666666 !important;
+}
+/* Update Password button text */
+.stButton button {
+    color: black !important;
+    font-weight: 600 !important;
+}
+/* Download button text fix */
+[data-testid="stDownloadButton"] button {
+    color: black !important;
+    font-weight: 600 !important;
+}
+/* Selectbox styling */
+div[data-baseweb="select"] > div {
+    border: 1px solid #b927fc !important;
+    background-color: #ffffff !important;
+}
+
+/* Login & Signup button text */
+.stButton button {
+    color: black !important;
+    font-weight: 700 !important;
+}
+/* INPUT BOXES DARK THEME */
+
+.stTextInput input,
+.stTextArea textarea,
+.stSelectbox div[data-baseweb="select"] > div,
+.stFileUploader {
+    background: #111827 !important;
+    color: white !important;
+    border: 1px solid rgba(99, 102, 241, 0.4) !important;
+    border-radius: 12px !important;
+}
+
+/* PLACEHOLDER TEXT */
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: rgba(255,255,255,0.45) !important;
+}
+
+/* TEXTAREA */
+
+textarea {
+    background: #111827 !important;
+    color: white !important;
+}
+
+/* FILE UPLOADER BUTTON */
+
+.stFileUploader button {
+    background: linear-gradient(90deg, #7c3aed, #2563eb) !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+/* DRAG DROP AREA */
+
+[data-testid="stFileUploaderDropzone"] {
+    background: rgba(17,24,39,0.8) !important;
+    border: 2px dashed rgba(99,102,241,0.4) !important;
+    color: white !important;
+}
+
+/* LABELS */
+
+label {
+    color: white !important;
+}
+/* PREMIUM GRADIENT BUTTONS */
+
+.stButton > button,
+.stDownloadButton > button{
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed 0%,
+        #4f46e5 50%,
+        #2563eb 100%
+    ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 14px !important;
+
+    padding: 14px 24px !important;
+
+    font-size: 1rem !important;
+
+    font-weight: 600 !important;
+
+    transition: all 0.3s ease !important;
+
+    box-shadow:
+        0 4px 18px rgba(79, 70, 229, 0.35) !important;
+
+    height: auto !important;
+}
+
+/* HOVER EFFECT */
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 28px rgba(79, 70, 229, 0.45) !important;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6 0%,
+        #6366f1 50%,
+        #3b82f6 100%
+    ) !important;
+}
+
+/* BUTTON TEXT */
+
+.stButton button p,
+.stDownloadButton button p{
+
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* REMOVE WHITE BACKGROUND */
+
+button[kind="secondary"] {
+    background: linear-gradient(
+        135deg,
+        #7c3aed 0%,
+        #2563eb 100%
+    ) !important;
+}
